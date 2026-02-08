@@ -11,7 +11,7 @@
     "dev:backend": "cd backend && npm run dev",
     "dev:frontend": "cd frontend && npm run dev",
     "render-build": "npm run install-all && npm run build",
-    "deploy": "npm run render-build"
+    "deploy": "npm run build"
   },
   "keywords": [
     "portfolio",
