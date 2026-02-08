@@ -5,11 +5,9 @@ services:
     region: oregon
     plan: free
     buildCommand: |
-      cd frontend && npm install --legacy-peer-deps
-      cd ../backend && npm install --production
-      cd ../frontend && npm run build
+      npm run render-build
     startCommand: |
-      node backend/server.js
+      npm start
     healthCheckPath: /api/health
     autoDeploy: true
     envVars:

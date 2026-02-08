@@ -1,27 +1,8 @@
 {
   "name": "project-showcase",
   "version": "1.0.0",
-  "description": "Fullstack project showcase application",
   "main": "backend/server.js",
   "scripts": {
-    "start": "node backend/server.js",
-    "install-all": "npm install && cd backend && npm install && cd ../frontend && npm install",
-    "dev": "npx concurrently \"cd backend && npm run dev\" \"cd frontend && npm run dev\""
-  },
-  "keywords": [
-    "portfolio",
-    "showcase",
-    "mern",
-    "react",
-    "node"
-  ],
-  "author": "",
-  "license": "MIT",
-  "devDependencies": {
-    "concurrently": "^8.2.2"
-  },
-  "engines": {
-    "node": "18.x",
-    "npm": "9.x"
+    "start": "node backend/server.js"
   }
 }
