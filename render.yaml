@@ -4,10 +4,8 @@ services:
     env: node
     region: oregon
     plan: free
-    buildCommand: |
-      npm run render-build
-    startCommand: |
-      npm start
+    buildCommand: npm run build
+    startCommand: npm start
     healthCheckPath: /api/health
     autoDeploy: true
     envVars:
