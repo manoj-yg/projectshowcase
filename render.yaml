@@ -5,9 +5,8 @@ services:
     region: oregon
     plan: free
     buildCommand: |
-      npm install
-      cd frontend && npm install
-      cd ../backend && npm install
+      cd frontend && npm install --legacy-peer-deps
+      cd ../backend && npm install --production
       cd ../frontend && npm run build
     startCommand: |
       node backend/server.js
