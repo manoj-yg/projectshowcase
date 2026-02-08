@@ -15,12 +15,23 @@ app.use(cors());
 app.use(express.json());
 
 // Serve static files from React app in production
-if (process.env.NODE_ENV === "production") {
-  const frontendPath = path.join(__dirname, "../frontend/dist");
-  app.use(express.static(frontendPath));
-  app.get("*", (req, res) => {
-    res.sendFile(path.join(frontendPath, "index.html"));
-  });
+if (process.env.NODE_ENV === 'production') {
+  const frontendPath = path.join(__dirname, '../frontend/dist');
+  
+  // Check if dist folder exists
+  if (fs.existsSync(frontendPath)) {
+    console.log('📁 Serving static files from:', frontendPath);
+    app.use(express.static(frontendPath));
+    
+    // Serve index.html for all non-API routes
+    app.get('*', (req, res) => {
+      if (!req.path.startsWith('/api')) {
+        res.sendFile(path.join(frontendPath, 'index.html'));
+      }
+    });
+  } else {
+    console.warn('⚠️  Frontend build not found. Run: npm run build in frontend folder');
+  }
 }
 
 // API Routes

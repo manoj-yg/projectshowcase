@@ -7,11 +7,9 @@
     "install-all": "npm install && cd backend && npm install && cd ../frontend && npm install",
     "build": "cd frontend && npm run build",
     "start": "node backend/server.js",
-    "dev": "npx concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev": "npx concurrently \"cd backend && npm run dev\" \"cd frontend && npm run dev\"",
     "dev:backend": "cd backend && npm run dev",
-    "dev:frontend": "cd frontend && npm run dev",
-    "render-build": "npm run install-all && npm run build",
-    "deploy": "npm run build"
+    "dev:frontend": "cd frontend && npm run dev"
   },
   "keywords": [
     "portfolio",
